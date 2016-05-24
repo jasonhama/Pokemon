@@ -1,0 +1,73 @@
+<html>
+
+<head>
+	<title>Query</title>
+	<link rel="stylesheet" type="text/css" href="cowstyle.css">
+	
+	<script>
+	var count = 1;
+	function add(){
+		var div = document.createElement("div").id();
+		div.id = count;
+		count++;
+		
+	}
+	</script>
+</head>
+
+<body>
+	<h1>This is Jason's Raspberry pi server</h1>
+	<p>Welcome!</p>
+	<br/>
+
+	<form action="result.php" method="GET">
+	<div>
+		<br/>
+		What category do you want to search for?
+		<select name="type">
+		<option value="pokemonNumber">ID number</option>
+		<option value="name">Name</option>
+		<option value="weight">Weight</option>
+		<option value="height">Height</option>
+		<option value="type">Type</option>
+		<option value="*">All</option>
+		<!--<option value=""></option>-->
+		</select>
+		<br/>
+		What kind of operator do you want?
+		<select name="op">
+			<option value="=">=</option>
+			<option value=">">></option>
+			<option value="<"><</option>
+			<option value="!=">!=</option>
+		</select>
+
+		<br/>
+		What value do you want to search for? <input type="text" name="input" required/>
+	</div>
+		
+	
+		
+		
+	
+	
+	<br/>
+	
+	<input type="submit" value="Submit">
+	</form> 
+	
+	<div style="display: none;">
+	<p>Alternatively you can build and submit your own query!</p>
+	
+	<form action="result.php" method="GET">
+	
+		<input type="text" name="input" value="pokemonNumber = 1" required/>
+		<input type="submit" value="Submit">
+	</form>
+	</div>
+	
+	<div>
+		<button onclick="add()">Add More Clauses</button>
+	</div>
+</body>
+</html>
